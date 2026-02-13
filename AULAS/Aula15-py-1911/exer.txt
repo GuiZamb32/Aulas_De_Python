@@ -1,0 +1,217 @@
+1.	Desenhe uma árvore binária de busca (BST) com os valores: 40, 20, 60, 10, 30, 50, 70.
+
+ Resposta:
+          40
+         /  \
+       20    60
+      / \    / \
+    10  30  50  70
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+2.	Determine o percurso em ordem, pré-ordem e pós-ordem da árvore do exercício 1.
+
+Resposta:
+    In ordem: 10, 20, 30, 40, 50, 60, 70
+    Pré-ordem: 40, 20, 10, 30, 60, 50, 70
+    Pós-ordem: 10, 30, 20, 50, 70, 60, 40
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+3.	Qual é o fator de balanceamento de cada nó da árvore abaixo? 
+          30
+         /  \
+       20    40
+      /        \
+    10         50
+
+Resposta:
+    Fator de balanceamento:
+    Nó 30: 0 (altura esquerda 2 - altura direita 2)
+    Nó 20: 1 (altura esquerda 1 - altura direita 0)
+    Nó 40: -1 (altura esquerda 0 - altura direita 1)
+    Nó 10: 0 (folha)
+    Nó 50: 0 (folha)
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+4.	Considerando que a árvore do exercício anterior é uma AVL, qual rotação é necessária para balanceá-la após a inserção do valor 25?
+Resposta:
+    Após a inserção do valor 25, a árvore ficará desbalanceada no nó 20 (fator de balanceamento 2).
+    A rotação necessária é uma rotação dupla à direita (rotação esquerda no nó 20 seguida de rotação direita no nó 30).
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+5.	Explique a diferença entre uma árvore cheia, completa e perfeita.
+
+Resposta:
+    - Árvore cheia: Uma árvore em que todos os nós têm 0 ou 2 filhos. Não há nós com apenas um filho.
+    - Árvore completa: Uma árvore em que todos os níveis, exceto possivelmente o último, estão completamente preenchidos, 
+      e todos os nós do último nível estão o mais à esquerda possível.
+    - Árvore perfeita: Uma árvore em que todos os níveis estão completamente preenchidos. Todos os nós internos têm exatamente dois filhos, 
+      e todas as folhas estão no mesmo nível.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+6.	Mostre o passo a passo da inserção dos números 10, 20, 30, 25 em uma árvore AVL.
+
+Resposta:
+    Passo 1: Inserir 10
+          10
+
+    Passo 2: Inserir 20
+          10
+            \
+            20
+
+    Passo 3: Inserir 30
+          20
+         /  \
+       10    30
+    (Desbalanceada no nó 10, rotação simples à esquerda)
+
+    Passo 4: Inserir 25
+          20
+         /  \
+       10    30
+             /
+           25
+    (Desbalanceada no nó 30, rotação dupla à direita)
+          25
+         /  \
+       20    30
+      /
+    10
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#7.	Calcule a complexidade de tempo do algoritmo de busca binária e justifique seu comportamento.
+
+Resposta:
+    A complexidade de tempo do algoritmo de busca binária é O(log n), onde n é o número de elementos no array.
+    Justificativa: A busca binária funciona dividindo o array em duas metades a cada iteração. 
+    Em cada passo, ela compara o elemento do meio com o valor buscado e descarta metade do array (a metade que não pode conter o valor buscado). 
+    Isso reduz significativamente o número de elementos a serem verificados a cada passo, resultando em um crescimento logarítmico do tempo de execução à medida que o tamanho do array aumenta.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+8.	Determine o número máximo de nós de uma árvore binária de altura 6.
+
+Resposta:
+    O número máximo de nós em uma árvore binária de altura h é dado pela fórmula: 2^(h+1) - 1.
+    Para uma árvore de altura 6:
+    Número máximo de nós = 2^(6+1) - 1 = 2^7 - 1 = 128 - 1 = 127.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+9.	Por que métodos de busca e ordenação são importantes em estruturas de dados e bancos de dados?
+
+Resposta:
+    Métodos de busca e ordenação são fundamentais em estruturas de dados e bancos de dados porque:
+    - Eficiência: Eles permitem a recuperação rápida e eficiente de dados, o que é crucial para o desempenho de aplicações que lidam com grandes volumes de informações.
+    - Organização: A ordenação dos dados facilita a análise, visualização e compreensão das informações armazenadas.
+    - Otimização de consultas: Em bancos de dados, dados ordenados podem melhorar significativamente o desempenho das consultas, especialmente em operações como junções e agregações.
+    - Redução de complexidade: Algoritmos eficientes de busca e ordenação reduzem a complexidade computacional, economizando tempo e recursos durante a execução de operações sobre os dados.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+10.	Considere a função recursiva abaixo:
+
+def exemplo3(n):
+	if n <= 1:
+		return 1
+	else:
+		return exemplo3(n-1) + exemplo3(n-1)
+
+Determine sua complexidade assintótica.
+
+
+Resposta:
+    A complexidade assintótica da função exemplo3 é O(2^n).
+    Justificativa: A função faz duas chamadas recursivas para cada valor de n maior que 1, o que resulta em uma árvore de chamadas binária. 
+    O número total de chamadas cresce exponencialmente com n, levando a uma complexidade de tempo O(2^n).
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+11.	Analise o seguinte algoritmo e determine sua complexidade:
+
+def exemplo2(n):
+    for i in range(n):
+        j = i**2
+        while j < n:
+            j += 1
+
+Qual a complexidade de tempo total do algoritmo?
+
+Resposta:
+    A complexidade de tempo total do algoritmo é O(n^1.5).
+    Justificativa: O loop externo itera n vezes. O loop interno começa em i^2 e vai até n, o que significa que o número de iterações do loop interno depende do valor de i. 
+    Para i variando de 0 a n-1, o número total de iterações do loop interno pode ser aproximado pela soma dos termos (n - i^2) para i de 0 a √n, resultando em uma complexidade total de O(n^1.5).
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+12.	Considere dois algoritmos de ordenação:
+    • Algoritmo A: Complexidade de tempo O(n²), uso de memória constante (O(1)).
+    • Algoritmo B: Complexidade de tempo O(n log n), uso de memória adicional O(n).
+
+Explique em que situações o Algoritmo A ainda pode ser mais vantajoso que o Algoritmo B.
+
+Resposta:
+    O Algoritmo A pode ser mais vantajoso que o Algoritmo B em situações onde:
+        - O tamanho dos dados é pequeno: Para conjuntos de dados pequenos, a diferença de desempenho entre O(n²) e O(n log n) pode ser negligenciável, e a simplicidade do Algoritmo A pode torná-lo mais rápido na prática.
+        - Limitações de memória: Se o ambiente de execução tem restrições severas de memória, o uso constante de memória do Algoritmo A pode ser preferível ao uso adicional de memória do Algoritmo B.
+        - Facilidade de implementação: O Algoritmo A pode ser mais simples de implementar e entender, o que pode ser uma vantagem em projetos onde a clareza do código é prioritária.
+        - Dados quase ordenados: Se os dados já estão quase ordenados, o Algoritmo A (como o Insertion Sort) pode ter um desempenho muito melhor do que o esperado, tornando-o mais eficiente que o Algoritmo B.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+13.	Explique por que a ordenação é uma etapa fundamental antes da aplicação de algoritmos de busca binária e como ela pode impactar o desempenho geral de um sistema.
+
+Resposta:
+    A ordenação é fundamental antes da aplicação de algoritmos de busca binária porque a busca binária depende da propriedade de que os elementos estão organizados em ordem crescente ou decrescente. 
+    Sem essa ordenação, a busca binária não pode funcionar corretamente, pois ela se baseia na divisão do conjunto de dados em metades para localizar o elemento desejado.
+
+    O impacto da ordenação no desempenho geral de um sistema pode ser significativo:
+        - Eficiência na busca: Uma vez que os dados estão ordenados, a busca binária pode localizar elementos em tempo O(log n), o que é muito mais eficiente do que uma busca linear O(n) em dados não ordenados.
+        - Custo inicial: Embora a ordenação inicial possa ter um custo computacional (por exemplo, O(n log n) para algoritmos eficientes), esse custo pode ser compensado por buscas subsequentes rápidas, especialmente em sistemas onde muitas buscas são realizadas.
+        - Melhoria na experiência do usuário: Em sistemas interativos, tempos de resposta rápidos são cruciais. A capacidade de realizar buscas rápidas em dados ordenados melhora a experiência do usuário final.
+        - Otimização de recursos: Sistemas que lidam com grandes volumes de dados podem se beneficiar significativamente da redução do tempo de busca, economizando recursos computacionais e melhorando a escalabilidade.
